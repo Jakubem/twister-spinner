@@ -1,0 +1,31 @@
+    h1 {
+    font-family: futura;
+    width: 20%;
+    padding: 10px;
+    color: black;
+    border-radius: 7px;
+    border: 2px black solid;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.loading {
+    width: 20%;
+    height: 10px;
+    background: #34b399;
+    border-radius: 7px;
+    animation-name: loading_bar;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+
+@keyframes loading_bar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20%;
+    }
