@@ -18,7 +18,7 @@ var intervalTime = '5000';
 
 
 loop();
-setInterval(loop, intervalTime);
+var interval = setInterval(loop, intervalTime);
 
 
 
@@ -26,3 +26,11 @@ var loading_bar = document.querySelector('.loading');
 
 loading_bar.style.animationDuration = intervalTime + 'ms';
 loading_bar.style.animationPlayState = 'running';
+
+document.body.addEventListener('keypress', function (ev) {
+    if (ev.code === 'Space') {
+        loop();
+        clearInterval(interval);
+        interval = setInterval(loop, intervalTime);
+    }
+})
