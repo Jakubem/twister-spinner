@@ -1,4 +1,4 @@
-    h1 {
+h1 {
     font-family: futura;
     width: 20%;
     padding: 10px;
@@ -11,7 +11,8 @@
     box-sizing: border-box;
 }
 
-.loading {
+.loading,
+.loading_reset {
     width: 20%;
     height: 10px;
     background: #34b399;
@@ -29,3 +30,4 @@
     to {
         width: 20%;
     }
+}
