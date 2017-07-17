@@ -7,9 +7,29 @@ var output = document.querySelector('h1');
 
 var mute = document.querySelector('.mute');
 
+var input = document.querySelector('input');
+//input.defaultValue = 15000;
+var send = document.querySelector('.send');
 
-var intervalTime = '5000';
 
+//kartka kruci papieru
+send.addEventListener('click', function () {
+    var input = document.querySelector('input');
+    if (Number(input.value) == 0) {
+        return;
+    }
+    intervalTime = Number(input.value);
+    currentTime.textContent = ' ' + intervalTime + 'ms';
+    clearInterval(interval);
+    resetMyAnimation();
+    loadingBar.style.animationDuration = intervalTime + 'ms';
+    interval = setInterval(loop, intervalTime);
+});
+
+var intervalTime = 15000;
+var currentTime = document.querySelector('.current_time');
+
+currentTime.textContent = ' ' + intervalTime + 'ms';
 
 function loop() {
 
@@ -23,18 +43,14 @@ function loop() {
     output.textContent = resultLimbs;
     output.style.color = resultColors;
 
-    if (mute.checked === false) {
-        const msg = new SpeechSynthesisUtterance('bip bopb' + resultLimbs + resultSayColors);
+    if (mute.checked === true) {
+        const msg = new SpeechSynthesisUtterance(resultLimbs + resultSayColors);
         msg.lang = 'en-UK';
         msg.pitch = 1;
         msg.rate = 0.7;
         speechSynthesis.speak(msg);
     }
 }
-
-
-
-
 
 loop();
 var interval = setInterval(loop, intervalTime);

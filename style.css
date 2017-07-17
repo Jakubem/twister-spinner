@@ -13,6 +13,29 @@ h1 {
     background: black;
 }
 
+h2{
+    color: #339966;
+    font-family: futura;
+    font-size: 17px;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.label{
+    margin: 0;
+    padding: 0;
+    font-size: 19px;
+}
+
+.current_time {
+    color: #ffb100;
+    font-family: futura;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 15px;
+}
+
 .loading,
 .loading_reset {
     width: 300px;
@@ -37,7 +60,7 @@ h1 {
 }
 
 .input-time {
-    width: 215px;
+    width: 200px;
     height: 30px;
     background: #f3f3f3;
     margin: 0;
@@ -66,10 +89,9 @@ h1 {
 input[type="checkbox"] {
     display: none;
 }
-
 input[type="checkbox"]+label span {
     display: block;
-    width: 45px;
+    width: 60px;
     height: 30px;
     /*padding-top: 20px;*/
     border-radius: 5px;
@@ -81,18 +103,22 @@ input[type="checkbox"]+label span {
     font-family: 'futura', 'helvetica;';
     color: black;
 }
+/*specificity*/
+input[type="checkbox"]:hover+label span {
+    background: #663399;
+}
 
 input[type="checkbox"]:checked+label span {
     background: #339966;
 }
 
 .send:hover {
-    background-color: #339966;
+    background-color: #663399;
     color: white;
 }
 
 .send:active {
-    background-color: #663399;
+    background-color: #339966;
 }
 
 .form {
@@ -110,4 +136,6 @@ body {
     padding: 15px;
     background: black;
     border-radius: 15px;
+    border: 5px solid rebeccapurple;
+    box-shadow: -2px -2px 0 #ae7de0;
 }
