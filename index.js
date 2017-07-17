@@ -5,9 +5,10 @@ var sayColor = [' blue', ' red', ' green', ' yellow'];
 var limbs = ['left arm', 'right arm', 'left leg', 'right leg'];
 var output = document.querySelector('h1');
 
+var mute = document.querySelector('.mute');
 
 
-var intervalTime = '20000';
+var intervalTime = '5000';
 
 
 function loop() {
@@ -22,11 +23,13 @@ function loop() {
     output.textContent = resultLimbs;
     output.style.color = resultColors;
 
-    const msg = new SpeechSynthesisUtterance('bip bopb' + resultLimbs + resultSayColors);
-    msg.lang = 'en-UK';
-    msg.pitch = 1;
-    msg.rate = 0.7;
-    window.speechSynthesis.speak(msg);
+    if (mute.checked === false) {
+        const msg = new SpeechSynthesisUtterance('bip bopb' + resultLimbs + resultSayColors);
+        msg.lang = 'en-UK';
+        msg.pitch = 1;
+        msg.rate = 0.7;
+        speechSynthesis.speak(msg);
+    }
 }
 
 
