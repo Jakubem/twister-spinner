@@ -1,5 +1,5 @@
 # twister-spinner
 
-simple twister with speech synthesizer
+Simple Twister Spinner with speech synthesizer
 
 Live demo: [Twister-spinner](http://twister.jakubemfoto.pl)
