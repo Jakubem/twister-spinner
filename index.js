@@ -3,7 +3,8 @@ var colors = ['#5c5cff', '#ff5e57', '#6bc44b', '#f0f04e'];
 var sayColor = [' blue', ' red', ' green', ' yellow'];
 
 var limbs = ['left arm', 'right arm', 'left leg', 'right leg'];
-var output = document.querySelector('h1');
+
+var output = document.querySelector('.picked-limb');
 
 var mute = document.querySelector('.mute');
 
@@ -14,7 +15,7 @@ var send = document.querySelector('.send');
 
 //kartka kruci papieru
 send.addEventListener('click', function () {
-    var input = document.querySelector('input');
+    var input = document.querySelector('.input-time');
     if (Number(input.value) == 0) {
         return;
     }
